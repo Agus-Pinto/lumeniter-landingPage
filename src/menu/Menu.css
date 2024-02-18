@@ -1,0 +1,182 @@
+.mainContainer {
+    height: 100vh;
+    background: #0F2027;
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+}
+
+.backPicture {
+    max-width: 100%;
+    filter: blur(2px);
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    position: absolute;
+    top: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 100%;
+}
+
+.logoBox {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+
+.logoLum {
+    height: 5rem;
+}
+
+.navigationCb {
+    display: none;
+}
+
+.navigationBt {
+    background-color: white;
+    height: 4.7rem;
+    width: 4.7rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 1rem;
+    right: 3rem;
+    z-index: 2000;
+    box-shadow: 0 0 1rem rgba(255, 255, 255, 0.425);
+}
+
+.navigationBk {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 1.1rem;
+    right: 3.1rem;
+    background-image: radial-gradient(#0b4eab, #420f6b);
+    z-index: 1000;
+    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.navigationNav {
+    height: 100vh;
+    width: 0%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    opacity: 0;
+    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navigationList {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+}
+
+.navigationItem {
+    margin: 2rem;
+}
+
+.navigationLink:link,
+.navigationLink:visited {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 300;
+    padding: 1rem 2.2rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+    background-size: 250%;
+    transition: all .4s;
+}
+
+.navigationLink:hover,
+.navigationLink:active {
+    background-position: 100%;
+    color: #0F2027;
+    transform: translateX(0.5rem);
+}
+
+.navigationCb:checked~.navigationBk {
+    transform: scale(50);
+}
+
+.navigationCb:checked~.navigationNav {
+    opacity: 1;
+    width: 100%;
+}
+
+.navigationIcon {
+    position: relative;
+    margin-top: 2.5rem;
+    margin-left: 0.9rem;
+}
+
+.navigationIcon,
+.navigationIcon::before,
+.navigationIcon::after {
+    width: 3rem;
+    height: 2px;
+    background-color: rgb(42, 42, 42);
+    display: inline-block;
+}
+
+.navigationIcon::before,
+.navigationIcon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all .2s;
+}
+
+.navigationIcon::before { 
+    top: -.8rem;
+}
+
+.navigationIcon::after {
+    top: .8rem;
+}
+
+.navigationBt:hover .navigationIcon::before {
+    top: -1rem;
+}
+
+.navigationBt:hover .navigationIcon::after {
+    top: 1rem;
+}
+
+.navigationCb:checked + .navigationBt .navigationIcon {
+    background-color: transparent;
+}
+
+.navigationCb:checked + .navigationBt .navigationIcon::before {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.navigationCb:checked + .navigationBt .navigationIcon::after {
+    top: 0;
+    transform: rotate(-135deg);
+}
+
+
+.bannerSection {
+    position: absolute;
+    top: 20%;
+}
+
+.bannerSection video {
+    width: 60vw;
+    border-radius: 2%;
+    box-shadow: 1px 1px 80px #00b3ff;
+}
